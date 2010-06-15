@@ -41,6 +41,9 @@
 }
 /* END:mainlayout */
 
+#store .entry form, #store .entry form div {
+	display: inline;
+}
 
 /* Global styles */
 
