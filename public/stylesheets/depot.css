@@ -1,61 +1,3 @@
-/* START:mainlayout */
-/* Styles for main page */
-
-#banner {
-  background: #9c9;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
-  text-align: center;
-}
-
-#banner img {
-  float: left;
-}
-
-#columns {
-  background: #141;
-}
-
-#main {
-  margin-left: 13em;
-  padding-top: 4ex;
-  padding-left: 2em;
-  background: white;
-}
-
-#side {
-  float: left;
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-bottom: 1em;
-  width: 12em;
-  background: #141;
-}
-
-#side a {
-  color: #bfb;
-  font-size: small;
-}
-/* END:mainlayout */
-
-#store .entry form, #store .entry form div {
-  display: inline;
-}
-
-#store .cart_title { 
-  font: 120% bold;
-}
-#store .item_price, #store .total_line { 
-  text-align: right;
-}
-#store .total_line .total_cell { 
-  font-weight: bold; 
-  border-top: 1px solid #595;
-}
-
 /* Global styles */
 
 #store #notice {
@@ -122,6 +64,49 @@
   background:   #f8b0f8;
 }
 
+/* START:mainlayout */
+/* Styles for main page */
+
+#banner {
+  background: #9c9;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #282;
+  text-align: center;
+}
+
+#banner img {
+  float: left;
+}
+
+#columns {
+  background: #141;
+}
+
+#main {
+  margin-left: 20em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}
+
+#side {
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 19em;
+  background: #141;
+}
+
+#side a {
+  color: #bfb;
+  font-size: small;
+}
+/* END:mainlayout */
+
 /* An entry in the store catalog */
 
 #store  .entry {
@@ -168,3 +153,77 @@
   font-weight: bold;
   margin-right: 2em;
 }
+
+/* START:inline */
+#store .entry form, #store .entry form div {
+  display: inline;
+}
+/* END:inline */
+
+/* START:cartmain */
+/* Styles for the cart in the main page */
+
+#store .cart_title {
+  font: 120% bold;
+}
+
+#store .item_price, #store .total_line {
+  text-align: right;
+}
+
+#store .total_line .total_cell {
+  font-weight: bold;
+  border-top: 1px solid #595;
+}
+/* END:cartmain */
+
+/* START:cartside */
+/* Styles for the cart in the sidebar */
+
+#cart, #cart table {
+  font-size: smaller;
+  color:     white;
+}
+
+#cart table {
+  border-top:    1px dotted #595;
+  border-bottom: 1px dotted #595;
+  margin-bottom: 10px;
+}
+/* END:cartside */
+
+/* START:form */
+/* Styles for order form */
+
+.depot_form fieldset {
+  background: #efe;
+}
+
+.depot_form legend {
+  color: #dfd;
+  background: #141;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+.depot_form label {
+  width: 5em;
+  float: left;
+  text-align: right;
+  padding-top: 0.2em;
+  margin-right: 0.1em;
+  display: block;
+}
+
+.depot_form select, .depot_form textarea, .depot_form input {
+  margin-left: 0.5em;
+}
+
+.depot_form .submit {
+  margin-left: 4em;
+}
+
+.depot_form div {
+  margin: 0.5em 0;
+}
+/* END:form */
