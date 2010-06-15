@@ -1,9 +1,10 @@
-class OrdersController < ApplicationController
+class OrdersController < ApplicationController            
+  skip_before_filter :authorize, :only => [:new, :create]
+  
   # GET /orders
   # GET /orders.xml
   def index
-    @orders = Order.paginate :page=>params[:page], :order=>'created_at desc',
-    :per_page => 10
+    @orders = Order.paginate :page=>params[:page], :order=>'created_at desc', :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb
@@ -53,9 +54,10 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
-        session[:cart_id] = nil
-        format.html { redirect_to(store_url, :notice => 
-          'Thank you for your order.') }
+        session[:cart_id] = nil                
+        # send order confirmation email
+        Notifier.order_received(@order).deliver
+        format.html { redirect_to(store_url, :notice => I18n.t('.thanks')) }
         format.xml  { render :xml => @order, :status => :created,
           :location => @order }
       else
